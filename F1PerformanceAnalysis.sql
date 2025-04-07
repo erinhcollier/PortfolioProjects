@@ -70,7 +70,7 @@ WITH ConstructorRank AS (
         c.name AS Constructor,
         YEAR(r.date) AS Season,
         SUM(rs.points) AS TotalPoints,
-        RANK() OVER (PARTITION BY YEAR(r.date) ORDER BY SUM(rs.points) DESC) AS Rank   
+        RANK() OVER (PARTITION BY YEAR(r.date) ORDER BY SUM(rs.points) DESC) AS Rank  --what about constructor standings table? 
     FROM 
         results rs
         JOIN constructors c ON rs.constructorId = c.constructorId
@@ -121,7 +121,6 @@ FROM
     DriverRaceYears
 ORDER BY 
     YearsWithConstructor DESC;
-
 
 /* Query 3. Constructor pit stops: pit stop duration & consistency (seconds) - Average, Variance*/
 
