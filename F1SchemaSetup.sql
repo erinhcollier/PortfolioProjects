@@ -49,7 +49,7 @@ CREATE TABLE driver_standings (
 CREATE TABLE drivers (
 	driverId INT PRIMARY KEY,
 	driverRef VARCHAR(50),
-	number VARCHAR(50),  -- alter this to an int
+	number VARCHAR(50),  
 	code VARCHAR(10),
 	forename VARCHAR(50),
 	surname VARCHAR(50), 
