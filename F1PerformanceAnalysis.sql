@@ -70,7 +70,7 @@ WITH ConstructorRank AS (
         c.name AS Constructor,
         YEAR(r.date) AS Season,
         SUM(rs.points) AS TotalPoints,
-        RANK() OVER (PARTITION BY YEAR(r.date) ORDER BY SUM(rs.points) DESC) AS Rank  --what about constructor standings table? 
+        RANK() OVER (PARTITION BY YEAR(r.date) ORDER BY SUM(rs.points) DESC) AS Rank  
     FROM 
         results rs
         JOIN constructors c ON rs.constructorId = c.constructorId
